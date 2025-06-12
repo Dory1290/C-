@@ -1,4 +1,5 @@
 
+
 // TransportSystem.h
 #ifndef TRANSPORTSYSTEM_H
 #define TRANSPORTSYSTEM_H
@@ -29,7 +30,7 @@ private:
         while (getline(fin, line))
         {
             stringstream ss(line);
-            string id, name, category，availableStr;
+            string id,name,category,availableStr;
             int p, w;
             getline(ss, id, ',');
             getline(ss, name, ',');
@@ -37,7 +38,7 @@ private:
             ss >> p;
             ss.ignore();
             ss >> w;
-            ss.ignore(); 
+            ss.ignore();
             getline(ss, availableStr);
             try {
             auto transport = createTransportByCategory(id, name, category, p, w);
@@ -55,7 +56,7 @@ private:
 public:
     TransportSystem() {reloadFleet();}
 
-    void reloadFleet() {loadFleetFromFile("fleet.txt"); } 
+    void reloadFleet() {loadFleetFromFile("fleet.txt"); }
     void saveFleetToFile(const string& filename)
     {
         if (fleet.empty()) {
@@ -103,7 +104,7 @@ public:
          for (auto& t : transports)
         {
             ids.push_back(t->getID());
-            t->setAvailable(false);  
+            t->setAvailable(false);
         }
     // If there is a previous reservation, it will be appended
     bookings[client.contact].insert(bookings[client.contact].end(), ids.begin(), ids.end());
