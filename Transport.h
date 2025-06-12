@@ -14,6 +14,8 @@ protected:
     int maxWeight;
     string category;
     bool available=true;
+    int quantity;
+
 public:
 
     Transport(string id_, string name_, string category_, int p, int w)
